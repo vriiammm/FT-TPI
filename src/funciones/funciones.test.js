@@ -1,5 +1,5 @@
-import { suma } from "./funciones";
-import {describe, test, it, expect} from "vitest";
+import { esMayorDeEdad, suma, saludar} from "./funciones";
+import {describe, test, expect} from "vitest";
 
 describe("sumar", () => {
     test ("devuelve 8 cuando se suma 5 y 3", () =>{
@@ -18,5 +18,30 @@ describe("sumar", () => {
         const resultado = suma(a, b);
 
         expect(resultado).toBe(0);
+    });
+});
+
+describe("esMayorDeEdad", ()=>{
+
+    test("Es mayor de edad?", ()=> { 
+
+        const edad = 20
+        const resultado = esMayorDeEdad(edad)
+        expect (resultado).toBe(true)
+    });
+    
+        test("Es mayor de edad?", ()=> { 
+
+        const edad = 15
+        const resultado = esMayorDeEdad(edad)
+        expect (resultado).toBe(false)
+    });
+});
+
+describe ("saludos", () => {
+    test ("hola ezequiel",() => {
+        const nombre = "a"
+        const saludo = saludar(nombre)
+        expect(saludo).toBe("Hola, a")
     });
 });
